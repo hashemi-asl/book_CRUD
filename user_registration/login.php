@@ -31,12 +31,12 @@ if (isset($_POST['username'])) {
         header('Location: dashboard.php');
     }else{
         echo"
-            <div class=\"container - fluid\">
-        <div class=\"row m - o mt - 5 p - 5\">
-            <div class=\"col - 4 offset - 4 jumbotron\">
+            <div class=\"container-fluid\">
+        <div class=\"row m-o mt-5 p-5\">
+            <div class=\"col-4 offset-4 jumbotron\">
                 <h3 class='text-center'> Incorrect Username/national code.</h3><br/>
                 <p class='link text-center'>Click here to <a href='login.php'>Login</a> again.</p>
-                  </div>\";
+                  </div>
                
             </div>
         </div>

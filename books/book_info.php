@@ -61,7 +61,13 @@ $query = mysqli_query($con, "SELECT * FROM books INNER JOIN users ON books.user_
                             <td><?php echo $item['description'] ?></td>
                             <td><img src="./images/<?php echo $item['image'] ?>" width="50px" height="50px" alt=""></td>
                             <td><a href="./update_book.php" class="btn btn-warning">edit</a></td>
-                            <td><a href="#" class="btn btn-danger">delete</a></td>
+                            <td>
+                                <form action="./delete_book.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $item['id']?>">
+                                    <input type="submit" value="delete" class="btn btn-danger">
+                                </form>
+<!--                                <a href="#" class="btn btn-danger">delete</a>-->
+                            </td>
 
                         </tr>
                     <?php endforeach; ?>

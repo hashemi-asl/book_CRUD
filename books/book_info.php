@@ -52,9 +52,7 @@ $query = mysqli_query($con, "SELECT * FROM books INNER JOIN users ON books.user_
                     //                    ?>
                     <?php foreach ($query as $item): ?>
 
-
                         <tr>
-
                             <td><?php echo $item['id'] ?></td>
                             <td><?php echo $item['name'] ?></td>
                             <td><?php echo $item['username'] ?></td>
@@ -63,10 +61,9 @@ $query = mysqli_query($con, "SELECT * FROM books INNER JOIN users ON books.user_
                             <td><a href="./update_book.php" class="btn btn-warning">edit</a></td>
                             <td>
                                 <form action="./delete_book.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $item['id']?>">
+                                    <input type="hidden" name="id" value="<?php echo $item['id'] ?>">
                                     <input type="submit" value="delete" class="btn btn-danger">
                                 </form>
-<!--                                <a href="#" class="btn btn-danger">delete</a>-->
                             </td>
 
                         </tr>

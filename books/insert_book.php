@@ -2,6 +2,7 @@
 require 'db.php';
 session_start();
 $uploade = 1;
+$msg = '';
 $name_set = false;
 $name = $_POST['name'];
 $user_id_set = false;
@@ -23,6 +24,7 @@ if ($image['size'] > 5000000) {
 if ($uploade == 1) {
     move_uploaded_file($image['tmp_name'], $directory);
 }
+
 
 if (empty($name)) {
     echo "
@@ -55,17 +57,23 @@ if (empty($description)) {
 if ($user_id_set == true && $name_set == true && $description_set == true) {
     $sql = "insert into `books`(user_id,name, description)values ('$user_id', '$name','$description')";
     $query = mysqli_query($con, $sql);
+
+
 //    $result= mysql_fetch_assoc($query);
 //    var_dump($query);
     //
 //    $_SESSION['name']=$result['name'];
 //    $_SESSION['user_id']=$result['user_id'];
-//    $_SESSION['description']=$result['description'];
-
-    echo '<script type=text/javascript>alert("Your book has been successfully added. Please check the list of books")</script>';
-
-
-
+////    $_SESSION['description']=$result['description'];
+//
+//    echo '<script type=text/javascript>alert("Your book has been successfully added. Please check the list of books")</script>';
+//    if (mysqli_query($con, $sql)) {
+//        echo json_encode(array("statusCode"=>200));
+//    }
+//    else {
+//        echo json_encode(array("statusCode"=>201));
+//    }
+//    mysqli_close($con);
 
     header('Location: book_list.php');
 }

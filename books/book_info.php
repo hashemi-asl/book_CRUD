@@ -22,13 +22,11 @@ $query = mysqli_query($con, "SELECT * FROM books INNER JOIN users ON books.user_
                 <h3 class="text-center m-0 mt-1 mb-5"> Book Info</h3>
                 <table class="table table-hover table-striped">
                     <tr>
-                        <th>id</th>
+<!--                        <th>id</th>-->
                         <th>book name</th>
                         <th>author name</th>
                         <th>description</th>
                         <th>image</th>
-                        <th>update</th>
-                        <th>delete</th>
                     </tr>
                     <!--                    --><?php
                     //                    foreach ($query as $item) {
@@ -53,18 +51,11 @@ $query = mysqli_query($con, "SELECT * FROM books INNER JOIN users ON books.user_
                     <?php foreach ($query as $item): ?>
 
                         <tr>
-                            <td><?php echo $item['id'] ?></td>
+<!--                            <td>--><?php //echo $item['id'] ?><!--</td>-->
                             <td><?php echo $item['name'] ?></td>
                             <td><?php echo $item['username'] ?></td>
                             <td><?php echo $item['description'] ?></td>
                             <td><img src="./images/<?php echo $item['image'] ?>" width="50px" height="50px" alt=""></td>
-                            <td><a href="./update_book.php" class="btn btn-warning">edit</a></td>
-                            <td>
-                                <form action="./delete_book.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $item['id'] ?>">
-                                    <input type="submit" value="delete" class="btn btn-danger">
-                                </form>
-                            </td>
 
                         </tr>
                     <?php endforeach; ?>

@@ -21,12 +21,16 @@ $users = mysqli_query($con, "select * from users");
 <!--add book-->
 <section class="container-fluid">
     <div class="add-book" id="add_book">
+        <div class="alert alert-success alert-dismissible" id="success" style="display:none;">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        </div>
         <form action="insert_book.php" id="add_book" method="post" enctype="multipart/form-data">
             <div class="col-6 offset-3 jumbotron mt-5 ">
                 <h3 class="text-center mb-5">Add Book</h3>
                 <div class="form-group">
                     <label for="book_name">Book name :</label>
-                    <input type="text" id="book_name" name="name" placeholder="Please enter your book name" class="form-control">
+                    <input type="text" id="book_name" name="name" placeholder="Please enter your book name"
+                           class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -51,7 +55,7 @@ $users = mysqli_query($con, "select * from users");
                     <input type="file" id="image" name="image" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="ADD" class="btn btn-success form-control">
+                    <input type="submit" name="add" value="Add" id="add" class="btn btn-success form-control">
                 </div>
 
             </div>
